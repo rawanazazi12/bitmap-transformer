@@ -49,7 +49,7 @@ class AppTest {
         Bitmap testFile = new Bitmap(inputFilePath, outputFilePath, grayFile);
         testFile.readFile();
         int lastRGBVal = -9863258;
-//        assertEquals(testFile.imageFlipHorizontal(),lastRGBVal,"File not flipped horizontally");
+       assertEquals(testFile.imageFlipHorizontal(),lastRGBVal,"File not flipped horizontally");
     }
     @Test
     public void testImageFlipVertical() {
