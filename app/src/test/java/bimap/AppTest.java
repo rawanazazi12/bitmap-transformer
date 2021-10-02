@@ -10,5 +10,55 @@ class AppTest {
     @Test void appHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+//        String inputFilePath = "C:\\Users\\dc\\asac\\bitmap-transformer\\app\\src\\main\\resources\\pic.bmp";
+//        String outputFilePath = "C:\\Users\\dc\\asac\\bitmap-transformer\\app\\src\\main\\resources\\";
+//        String grayFile = "new.bmp";
+//        Bitmap testFile = new Bitmap(inputFilePath, outputFilePath, grayFile);
+    }
+    @Test
+    public void testReadFile() {
+        String inputFilePath = "C:\\Users\\dc\\asac\\bitmap-transformer\\app\\src\\main\\resources\\pic.bmp";
+        String outputFilePath = "C:\\Users\\dc\\asac\\bitmap-transformer\\app\\src\\main\\resources\\";
+        String grayFile = "new.bmp";
+        Bitmap testFile = new Bitmap(inputFilePath, outputFilePath, grayFile);
+        assertEquals(testFile.readFile(),true,"File not found");
+    }
+    @Test
+    public void testSaveFile() {
+        String inputFilePath = "C:\\Users\\dc\\asac\\bitmap-transformer\\app\\src\\main\\resources\\pic.bmp";
+        String outputFilePath = "C:\\Users\\dc\\asac\\bitmap-transformer\\app\\src\\main\\resources\\";
+        String grayFile = "new.bmp";
+        Bitmap testFile = new Bitmap(inputFilePath, outputFilePath, grayFile);
+        testFile.readFile();
+        assertEquals(testFile.saveFile(),true,"File not saved");
+    }
+    @Test
+    public void testGray() {
+        String inputFilePath = "C:\\Users\\dc\\asac\\bitmap-transformer\\app\\src\\main\\resources\\pic.bmp";
+        String outputFilePath = "C:\\Users\\dc\\asac\\bitmap-transformer\\app\\src\\main\\resources\\";
+        String grayFile = "new.bmp";
+        Bitmap testFile = new Bitmap(inputFilePath, outputFilePath, grayFile);
+        testFile.readFile();
+        assertEquals(testFile.grayScale(),true);
+    }
+    @Test
+    public void testImageFlipHorizontal() {
+        String inputFilePath = "C:\\Users\\dc\\asac\\bitmap-transformer\\app\\src\\main\\resources\\pic.bmp";
+        String outputFilePath = "C:\\Users\\dc\\asac\\bitmap-transformer\\app\\src\\main\\resources\\";
+        String grayFile = "new.bmp";
+        Bitmap testFile = new Bitmap(inputFilePath, outputFilePath, grayFile);
+        testFile.readFile();
+        int lastRGBVal = -9863258;
+//        assertEquals(testFile.imageFlipHorizontal(),lastRGBVal,"File not flipped horizontally");
+    }
+    @Test
+    public void testImageFlipVertical() {
+        String inputFilePath = "C:\\Users\\dc\\asac\\bitmap-transformer\\app\\src\\main\\resources\\pic.bmp";
+        String outputFilePath = "C:\\Users\\dc\\asac\\bitmap-transformer\\app\\src\\main\\resources\\";
+        String grayFile = "new.bmp";
+        Bitmap testFile = new Bitmap(inputFilePath, outputFilePath, grayFile);
+        testFile.readFile();
+        int lastRGBVal = -7361324;
+        assertEquals(testFile.imageFlipVertical(),lastRGBVal,"File not flipped vertically");
     }
 }

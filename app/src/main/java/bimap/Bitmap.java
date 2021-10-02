@@ -79,6 +79,7 @@ public class Bitmap {
             }
         }
         return lastRGBVal;
+
     }
 
     public int imageFlipVertical() {
